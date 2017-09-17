@@ -1,0 +1,96 @@
+﻿<!DOCTYPE html>
+<html>
+    <head>
+        <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+        <meta name="format-detection" content="telephone=no">
+        <meta name="msapplication-tap-highlight" content="no">
+        <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width">
+        <link rel="stylesheet" type="text/css" href="css/index.css">
+        <title>ProjectFoo.Mobile</title>
+    </head>
+    <body>
+        <div class="app">
+            <div class="page page-splash">
+                <img src="images/icon.png"/>
+            </div>
+            <div class="page page-server" hidden>
+                <h2>Bitte gib die Server-IP ein:</h2>
+                <input type="text" id="ServerIP" placeholder="10.172.1.19" value="10.172.1.19" />
+                <button id="SubmitServerIP">Mit Server verbinden</button>
+                <h3 id="ServerIPResult" hidden></h3>
+            </div>
+            <div class="page page-authenticate" hidden>
+                <h2>Bitte gib deinen Auth-Code ein:</h2>
+                <input type="number" id="AuthCode" placeholder="123456" min="0" />
+                <button id="SubmitAuthCode">Einloggen</button>
+                <h3 id="AuthCodeResult" hidden></h3>
+            </div>
+            <div class="page page-qrcode" hidden>
+                <div id="MenuButton">
+                    <div class="line"></div>
+                    <div class="line"></div>
+                    <div class="line"></div>
+                </div>
+                <div id="Menu" class="open">
+                    <div class="btn-menu" id="Balance">Kaufhistorie</div>
+                    <div class="btn-menu" id="Reset">App zurücksetzen</div>
+                    <div class="btn-menu" id="About">Über uns</div>
+                </div>
+                <h3 id="Manual">Bitte scanne den QR-Code von<br />einem Kühlschrank ein:</h3>
+                <div id="Border"></div>
+                <h3 id="Toast"></h3>
+            </div>
+            <div class="page page-repository" hidden>
+                <div id="TitleBar">
+                    <h2 id="Name"></h2>
+                    <h3 id="Location"></h3>
+                </div>
+                <div id="List">
+                    <div class="repository example">
+                        <h2 id="Name"></h2>
+                        <h3 id="Amount"></h3>
+                        <h1 id="Price"></h1>
+                    </div>
+                </div>
+                <div id="BuyPrompt">
+                    <div id="Background"></div>
+                    <div id="Dialog">
+                        <h2>Bist du dir sicher, dass du "<span id="Drink"></span>" kaufen möchtest?</h2>
+                        <h3>Dieser Prozess kann nicht rückgängig gemacht werden.</h3>
+                        <button class="btn" id="Buy">Kaufen</button>
+                        <button class="btn" id="Cancel">Abbrechen</button>
+                    </div>
+                    <div id="Confirmation" hidden>
+                        <h2>"<span id="Drink"></span>" gekauft!</h2>
+                    </div>
+                </div>
+            </div>
+            <div class="page page-balance" hidden>
+                <div id="TitleBar">
+                    <h2 id="Cost"></h2>
+                    <h3 id="Coins"></h3>
+                </div>
+                <div id="List">
+                    <div class="history example">
+                        <h2 id="Name"></h2>
+                        <h2 id="Price"></h2>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <script type="text/javascript" src="cordova.js"></script>
+        <script type="text/javascript" src="scripts/platformOverrides.js"></script>
+
+        <script type="text/javascript" src="scripts/jQuery.js"></script>
+
+        <script type="text/javascript" src="scripts/pageSplash.js"></script>
+        <script type="text/javascript" src="scripts/pageServer.js"></script>
+        <script type="text/javascript" src="scripts/pageAuthenticate.js"></script>
+        <script type="text/javascript" src="scripts/pageQRCode.js"></script>
+        <script type="text/javascript" src="scripts/pageRepository.js"></script>
+        <script type="text/javascript" src="scripts/pageBalance.js"></script>
+
+        <script type="text/javascript" src="scripts/index.js"></script>
+    </body>
+</html>
